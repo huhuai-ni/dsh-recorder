@@ -1,0 +1,53 @@
+{
+  "name": "dsh-recorder",
+  "version": "0.1.0",
+  "description": "DSH 插件：全局热键录屏（ffmpeg gdigrab），带设置页与录像列表",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "scripts",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "screen-recorder",
+    "ffmpeg"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-settings-plugins"
+      ]
+    }
+  },
+  "author": "huhuai-ni",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huhuai-ni/dsh-recorder.git"
+  },
+  "homepage": "https://github.com/huhuai-ni/dsh-recorder#readme",
+  "bugs": {
+    "url": "https://github.com/huhuai-ni/dsh-recorder/issues"
+  }
+}
